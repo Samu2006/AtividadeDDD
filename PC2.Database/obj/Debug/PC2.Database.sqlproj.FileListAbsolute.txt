@@ -1,0 +1,10 @@
+C:\Users\Samuel\source\repos\PC2\PC2.Database\bin\Debug\PC2.Database.dacpac
+C:\Users\Samuel\source\repos\PC2\PC2.Database\bin\Debug\PC2.Database.dll
+C:\Users\Samuel\source\repos\PC2\PC2.Database\bin\Debug\PC2.Database.pdb
+C:\Users\Samuel\source\repos\PC2\PC2.Database\obj\Debug\Model.xml
+C:\Users\Samuel\source\repos\PC2\PC2.Database\obj\Debug\refactor.xml
+C:\Users\Samuel\source\repos\PC2\PC2.Database\obj\Debug\postdeploy.sql
+C:\Users\Samuel\source\repos\PC2\PC2.Database\obj\Debug\predeploy.sql
+C:\Users\Samuel\source\repos\PC2\PC2.Database\obj\Debug\PC2.Database.dll
+C:\Users\Samuel\source\repos\PC2\PC2.Database\obj\Debug\PC2.Database.pdb
+C:\Users\Samuel\source\repos\PC2\PC2.Database\obj\Debug\PC2.Database.sqlprojAssemblyReference.cache

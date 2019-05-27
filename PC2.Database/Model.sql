@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Model]
+(
+	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
+    [NameModel] VARCHAR(50) NOT NULL, 
+    [CreateAt] DATETIME NOT NULL
+)

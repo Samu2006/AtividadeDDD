@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0853E85-F4BA-4CB9-ACF7-40A3E0C5B22C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PC2.WinApplication</RootNamespace>
+    <AssemblyName>PC2.WinApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentValidator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidator.1.0.5\lib\net461\FluentValidator.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.2.1.1\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configurations\MSSQLConfiguration.cs" />
+    <Compile Include="Configurations\SQLLITEConfiguration.cs" />
+    <Compile Include="Forms\AddsEdits\frmAddBuyer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddsEdits\frmAddBuyer.Designer.cs">
+      <DependentUpon>frmAddBuyer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddsEdits\frmAddModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddsEdits\frmAddModel.Designer.cs">
+      <DependentUpon>frmAddModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddsEdits\frmAddVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddsEdits\frmAddVehicle.Designer.cs">
+      <DependentUpon>frmAddVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddsEdits\frmSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddsEdits\frmSale.Designer.cs">
+      <DependentUpon>frmSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Lists\frmListBuyer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lists\frmListBuyer.Designer.cs">
+      <DependentUpon>frmListBuyer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Lists\frmListModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lists\frmListModel.Designer.cs">
+      <DependentUpon>frmListModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Lists\frmListVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lists\frmListVehicle.Designer.cs">
+      <DependentUpon>frmListVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Lists\frmListSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Lists\frmListSale.Designer.cs">
+      <DependentUpon>frmListSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\ConfigureService.cs" />
+    <EmbeddedResource Include="Forms\AddsEdits\frmAddBuyer.resx">
+      <DependentUpon>frmAddBuyer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddsEdits\frmAddModel.resx">
+      <DependentUpon>frmAddModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddsEdits\frmAddVehicle.resx">
+      <DependentUpon>frmAddVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddsEdits\frmSale.resx">
+      <DependentUpon>frmSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lists\frmListBuyer.resx">
+      <DependentUpon>frmListBuyer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lists\frmListModel.resx">
+      <DependentUpon>frmListModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lists\frmListVehicle.resx">
+      <DependentUpon>frmListVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Lists\frmListSale.resx">
+      <DependentUpon>frmListSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\PC2.Domain.Concessionaire.Commands.Inputs.Models.ListModel.datasource" />
+    <None Include="Properties\DataSources\PC2.Domain.Concessionaire.Commands.Inputs.Models.ModelsInput.datasource" />
+    <None Include="Properties\DataSources\PC2.Domain.Concessionaire.Commands.Inputs.Vehicles.ListVehicle.datasource" />
+    <None Include="Properties\DataSources\PC2.Domain.Concessionaire.Commands.Inputs.Vehicles.VehiclesInput.datasource" />
+    <None Include="Properties\DataSources\PC2.Domain.Concessionaire.Commands.Inputs.VehiclesSales.ListVehicleSale.datasource" />
+    <None Include="Properties\DataSources\PC2.Domain.Concessionaire.Commands.Inputs.VehiclesSales.VehicleSalesInput.datasource" />
+    <None Include="Properties\DataSources\PC2.Domain.Concessionaire.Commands.Inputs.VehiclesSales.VehicleSalesInput1.datasource" />
+    <None Include="Properties\DataSources\PC2.Domain.Customers.Commands.Inputs.BuyerInput.datasource" />
+    <None Include="Properties\DataSources\PC2.Domain.Customers.Commands.Inputs.ListBuyer.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PC2.Domain\PC2.Domain.csproj">
+      <Project>{bc453a86-30aa-411c-97d0-8fe5db54ca3f}</Project>
+      <Name>PC2.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PC2.Infra\PC2.Infra.csproj">
+      <Project>{bd5f5bfa-d52a-486f-9a1e-b7b2557c3646}</Project>
+      <Name>PC2.Infra</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PC2.Shared\PC2.Shared.csproj">
+      <Project>{14b91559-0181-4932-a0ff-c9c5f923cae6}</Project>
+      <Name>PC2.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\180160394.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saída.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estoque2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entrada1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multimarcas_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modelo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cliente_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientes_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entrada_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entrada_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saída_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estoque_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modelo_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientes_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entradas_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\saídas_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estoque_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modelo_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adicionar_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adicionar_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modelos_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1801603941.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.109.2\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+</Project>

@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28306.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Domain", "1-Domain", "{F2F9D0F8-EC32-449A-8EB3-54FB460EF357}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Shared", "2-Shared", "{2C84FBB1-F1EF-4DCB-BDC7-6A4CD9BBC722}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-Infra", "3-Infra", "{5C7B9B6B-603D-45F7-8B3B-E1B5A54CD448}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-Application", "4-Application", "{CD329388-3B9D-45E7-8C15-F01D78184DD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PC2.Domain", "PC2.Domain\PC2.Domain.csproj", "{BC453A86-30AA-411C-97D0-8FE5DB54CA3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PC2.Shared", "PC2.Shared\PC2.Shared.csproj", "{14B91559-0181-4932-A0FF-C9C5F923CAE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PC2.Infra", "PC2.Infra\PC2.Infra.csproj", "{BD5F5BFA-D52A-486F-9A1E-B7B2557C3646}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PC2.WinApplication", "PC2.WinApplication\PC2.WinApplication.csproj", "{F0853E85-F4BA-4CB9-ACF7-40A3E0C5B22C}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PC2.Database", "PC2.Database\PC2.Database.sqlproj", "{672A8EF7-D78B-4A1D-A25B-1B42C092906F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC453A86-30AA-411C-97D0-8FE5DB54CA3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC453A86-30AA-411C-97D0-8FE5DB54CA3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC453A86-30AA-411C-97D0-8FE5DB54CA3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC453A86-30AA-411C-97D0-8FE5DB54CA3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14B91559-0181-4932-A0FF-C9C5F923CAE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14B91559-0181-4932-A0FF-C9C5F923CAE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14B91559-0181-4932-A0FF-C9C5F923CAE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14B91559-0181-4932-A0FF-C9C5F923CAE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD5F5BFA-D52A-486F-9A1E-B7B2557C3646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD5F5BFA-D52A-486F-9A1E-B7B2557C3646}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD5F5BFA-D52A-486F-9A1E-B7B2557C3646}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD5F5BFA-D52A-486F-9A1E-B7B2557C3646}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0853E85-F4BA-4CB9-ACF7-40A3E0C5B22C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0853E85-F4BA-4CB9-ACF7-40A3E0C5B22C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0853E85-F4BA-4CB9-ACF7-40A3E0C5B22C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0853E85-F4BA-4CB9-ACF7-40A3E0C5B22C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{672A8EF7-D78B-4A1D-A25B-1B42C092906F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{672A8EF7-D78B-4A1D-A25B-1B42C092906F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{672A8EF7-D78B-4A1D-A25B-1B42C092906F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{672A8EF7-D78B-4A1D-A25B-1B42C092906F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{672A8EF7-D78B-4A1D-A25B-1B42C092906F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{672A8EF7-D78B-4A1D-A25B-1B42C092906F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BC453A86-30AA-411C-97D0-8FE5DB54CA3F} = {F2F9D0F8-EC32-449A-8EB3-54FB460EF357}
+		{14B91559-0181-4932-A0FF-C9C5F923CAE6} = {2C84FBB1-F1EF-4DCB-BDC7-6A4CD9BBC722}
+		{BD5F5BFA-D52A-486F-9A1E-B7B2557C3646} = {5C7B9B6B-603D-45F7-8B3B-E1B5A54CD448}
+		{F0853E85-F4BA-4CB9-ACF7-40A3E0C5B22C} = {CD329388-3B9D-45E7-8C15-F01D78184DD0}
+		{672A8EF7-D78B-4A1D-A25B-1B42C092906F} = {5C7B9B6B-603D-45F7-8B3B-E1B5A54CD448}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1178D3F3-E79C-4A4D-84EF-E9EED50F763B}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/ltp5-pc
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = PC2.Database\\PC2.Database.sqlproj
+		SccProjectTopLevelParentUniqueName1 = PC2.sln
+		SccProjectName1 = PC2.Database
+		SccLocalPath1 = PC2.Database
+		SccProjectUniqueName2 = PC2.Domain\\PC2.Domain.csproj
+		SccProjectTopLevelParentUniqueName2 = PC2.sln
+		SccProjectName2 = PC2.Domain
+		SccLocalPath2 = PC2.Domain
+		SccProjectUniqueName3 = PC2.Infra\\PC2.Infra.csproj
+		SccProjectTopLevelParentUniqueName3 = PC2.sln
+		SccProjectName3 = PC2.Infra
+		SccLocalPath3 = PC2.Infra
+		SccProjectUniqueName4 = PC2.Shared\\PC2.Shared.csproj
+		SccProjectTopLevelParentUniqueName4 = PC2.sln
+		SccProjectName4 = PC2.Shared
+		SccLocalPath4 = PC2.Shared
+		SccProjectUniqueName5 = PC2.WinApplication\\PC2.WinApplication.csproj
+		SccProjectTopLevelParentUniqueName5 = PC2.sln
+		SccProjectName5 = PC2.WinApplication
+		SccLocalPath5 = PC2.WinApplication
+	EndGlobalSection
+EndGlobal

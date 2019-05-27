@@ -1,0 +1,7 @@
+C:\Users\Samuel\source\repos\PC2\PC2.Shared\bin\Debug\PC2.Shared.dll
+C:\Users\Samuel\source\repos\PC2\PC2.Shared\bin\Debug\PC2.Shared.pdb
+C:\Users\Samuel\source\repos\PC2\PC2.Shared\bin\Debug\FluentValidator.dll
+C:\Users\Samuel\source\repos\PC2\PC2.Shared\obj\Debug\PC2.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Samuel\source\repos\PC2\PC2.Shared\obj\Debug\PC2.Shared.csproj.CopyComplete
+C:\Users\Samuel\source\repos\PC2\PC2.Shared\obj\Debug\PC2.Shared.dll
+C:\Users\Samuel\source\repos\PC2\PC2.Shared\obj\Debug\PC2.Shared.pdb

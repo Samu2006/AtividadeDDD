@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC453A86-30AA-411C-97D0-8FE5DB54CA3F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PC2.Domain</RootNamespace>
+    <AssemblyName>PC2.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentValidator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidator.1.0.5\lib\net461\FluentValidator.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Concessionaire\Commands\Handlers\ModelHandler.cs" />
+    <Compile Include="Concessionaire\Commands\Handlers\VehicleHandler.cs" />
+    <Compile Include="Concessionaire\Commands\Handlers\VehicleSalesHandler.cs" />
+    <Compile Include="Concessionaire\Commands\Inputs\Models\ListModel.cs" />
+    <Compile Include="Concessionaire\Commands\Inputs\Models\ModelsInput.cs" />
+    <Compile Include="Concessionaire\Commands\Inputs\VehiclesSales\ListVehicleSale.cs" />
+    <Compile Include="Concessionaire\Commands\Inputs\VehiclesSales\VehicleSalesInput.cs" />
+    <Compile Include="Concessionaire\Commands\Inputs\Vehicles\ListVehicle.cs" />
+    <Compile Include="Concessionaire\Commands\Inputs\Vehicles\VehiclesInput.cs" />
+    <Compile Include="Concessionaire\Commands\Results\ConcessionaireResult.cs" />
+    <Compile Include="Concessionaire\Entities\Model.cs" />
+    <Compile Include="Concessionaire\Entities\Vehicle.cs" />
+    <Compile Include="Concessionaire\Entities\VehicleSales.cs" />
+    <Compile Include="Concessionaire\Repositories\IModelRepository.cs" />
+    <Compile Include="Concessionaire\Repositories\IVehicleRepository.cs" />
+    <Compile Include="Concessionaire\Repositories\IVehicleSalesRepository.cs" />
+    <Compile Include="Customers\Commands\Handlers\BuyerHandler.cs" />
+    <Compile Include="Customers\Commands\Inputs\BuyerInput.cs" />
+    <Compile Include="Customers\Commands\Inputs\ListBuyer.cs" />
+    <Compile Include="Customers\Commands\Results\CustomerResult.cs" />
+    <Compile Include="Customers\Entities\Buyer.cs" />
+    <Compile Include="Customers\Enums\EGender.cs" />
+    <Compile Include="Customers\Repositories\IBuyerRepository.cs" />
+    <Compile Include="Shared\Commands\Handlers\AddressHandler.cs" />
+    <Compile Include="Shared\Commands\Inputs\AddressInput.cs" />
+    <Compile Include="Shared\Commands\Inputs\ListAddress.cs" />
+    <Compile Include="Shared\Commands\Results\SharedResult.cs" />
+    <Compile Include="Shared\Repositories\IAddressRepository.cs" />
+    <Compile Include="Shared\ValueObjects\Document.cs" />
+    <Compile Include="Shared\ValueObjects\Email.cs" />
+    <Compile Include="Shared\ValueObjects\Name.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shared\Entities\Address.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PC2.Shared\PC2.Shared.csproj">
+      <Project>{14b91559-0181-4932-a0ff-c9c5f923cae6}</Project>
+      <Name>PC2.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Concessionaire\ValueObjects\" />
+    <Folder Include="Customers\ValueObjects\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
