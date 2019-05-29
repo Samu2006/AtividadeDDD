@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="PC2.Database.dll" />
-			<Metadata Name="FileName" Value="C:\USERS\SAMUEL\SOURCE\REPOS\PC2\PC2.DATABASE\OBJ\DEBUG\PC2.DATABASE.DLL" />
+			<Metadata Name="FileName" Value="C:\USERS\N.E.R.D.S\SOURCE\WORKSPACES\PC2\PC2\PC2\PC2.DATABASE\OBJ\DEBUG\PC2.DATABASE.DLL" />
 			<Metadata Name="AssemblyName" Value="PC2.Database" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\Users\Samuel\source\repos\PC2\PC2.Database\obj\Debug\PC2.Database.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\N.E.R.D.S\source\Workspaces\PC2\PC2\PC2\PC2.Database\obj\Debug\PC2.Database.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>

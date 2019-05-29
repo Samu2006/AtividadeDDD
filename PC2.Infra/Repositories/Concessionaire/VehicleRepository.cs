@@ -22,7 +22,8 @@ namespace PC2.Infra.Repositories.Concessionaire
             {
                 var sql = @"SELECT * " +
                          " FROM [Vehicle] V	" +
-                         "INNER JOIN [Model] M	ON V.[ModelId] = M.[Id] ";
+                         "INNER JOIN [Model] M	ON V.[ModelId] = M.[Id]" +
+                         "WHERE V.[Id]=@Id ";
                 var listVehicle = db.Query<Vehicle, Model, Vehicle>(sql,
                     map: (vehicle, models) => { vehicle.AddModel(models); return vehicle; }, splitOn: "Id,Id",
                     param: new { Id = id }).FirstOrDefault();

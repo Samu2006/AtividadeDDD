@@ -33,18 +33,20 @@ namespace PC2.Infra.Repositories.Customer
         {
             using (var db = _DB.GetConnection())
             {
-                var sql = "SELECT *, B.FirstName, B.LastName " +
+                var sql = "SELECT *, B.FirstName, B.LastName,B.CPF " +
                             "  FROM [Buyer]	B     " +
-                            "INNER JOIN [Address] A  ON A.[Id] = B.[AddressId]";
-                var listBuyer = db.Query<Buyer, Address, Name, Buyer>(sql, map: (buyer, address, name) =>
+                            "INNER JOIN [Address] A  ON A.[Id] = B.[AddressId]" +
+                            "WHERE B.[Id] =@Id";
+                var listBuyer = db.Query<Buyer, Address, Name,Document,Buyer>(sql, map: (buyer, address, name,document) =>
                 {
                     address = new Address(address.Id, address.Number, address.Street,
                     address.PublicPlace, address.City, address.State, address.ZipCode, address.CreateAt);
                     name = new Name(name.FirstName, name.LastName);
-                    buyer = new Buyer(buyer.Id, name, address, buyer.Document,
+                    document = new Document(document.Number);
+                    buyer = new Buyer(buyer.Id, name, address, document,
                         buyer.Email, buyer.Birthday, buyer.Gender, buyer.Nationality, buyer.Phone, buyer.CreateAt);
                     return buyer;
-                }, splitOn: "Id,Id,FirstName").FirstOrDefault();
+                }, param: new { Id = id }, splitOn: "Id,Id,FirstName,CPF").FirstOrDefault();
                 return listBuyer;
             }
         }
@@ -67,18 +69,19 @@ namespace PC2.Infra.Repositories.Customer
             using (var db = _DB.GetConnection())
             {
 
-                var sql = "SELECT *, B.FirstName, B.LastName " +
+                var sql = "SELECT *, B.FirstName, B.LastName,B.CPF AS Number " +
                           "  FROM [Buyer]	B     " +
                           "INNER JOIN [Address] A  ON A.[Id] = B.[AddressId]";
-                var listBuyer = db.Query<Buyer, Address, Name, Buyer>(sql, map: (buyer, address, name) =>
+                var listBuyer = db.Query<Buyer, Address, Name,Document, Buyer>(sql, map: (buyer, address, name,document) =>
                 {
                     address = new Address(address.Id, address.Number, address.Street,
                     address.PublicPlace, address.City, address.State, address.ZipCode, address.CreateAt);
                     name = new Name(name.FirstName, name.LastName);
-                    buyer = new Buyer(buyer.Id, name, address, buyer.Document,
+                    document = new Document(document.Number);
+                    buyer = new Buyer(buyer.Id, name, address, document,
                         buyer.Email, buyer.Birthday, buyer.Gender, buyer.Nationality, buyer.Phone, buyer.CreateAt);
                     return buyer;
-                }, splitOn: "Id,Id,FirstName");
+                }, splitOn: "Id,FirstName,Number");
                 return listBuyer;
 
             }

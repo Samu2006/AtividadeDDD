@@ -15,8 +15,8 @@ SET NUMERIC_ROUNDABORT OFF;
 GO
 :setvar DatabaseName "PC2"
 :setvar DefaultFilePrefix "PC2"
-:setvar DefaultDataPath "C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\"
-:setvar DefaultLogPath "C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\"
+:setvar DefaultDataPath "C:\Program Files\Microsoft SQL Server\MSSQL12.SWTEST\MSSQL\DATA\"
+:setvar DefaultLogPath "C:\Program Files\Microsoft SQL Server\MSSQL12.SWTEST\MSSQL\DATA\"
 
 GO
 :on error exit
@@ -193,55 +193,6 @@ IF EXISTS (SELECT 1
 
 
 GO
-IF EXISTS (SELECT 1
-           FROM   [master].[dbo].[sysdatabases]
-           WHERE  [name] = N'$(DatabaseName)')
-    BEGIN
-        ALTER DATABASE [$(DatabaseName)]
-            SET QUERY_STORE (QUERY_CAPTURE_MODE = ALL, DATA_FLUSH_INTERVAL_SECONDS = 900, INTERVAL_LENGTH_MINUTES = 60, MAX_PLANS_PER_QUERY = 200, CLEANUP_POLICY = (STALE_QUERY_THRESHOLD_DAYS = 367), MAX_STORAGE_SIZE_MB = 100) 
-            WITH ROLLBACK IMMEDIATE;
-    END
-
-
-GO
-IF EXISTS (SELECT 1
-           FROM   [master].[dbo].[sysdatabases]
-           WHERE  [name] = N'$(DatabaseName)')
-    BEGIN
-        ALTER DATABASE [$(DatabaseName)]
-            SET QUERY_STORE = OFF 
-            WITH ROLLBACK IMMEDIATE;
-    END
-
-
-GO
-IF EXISTS (SELECT 1
-           FROM   [master].[dbo].[sysdatabases]
-           WHERE  [name] = N'$(DatabaseName)')
-    BEGIN
-        ALTER DATABASE SCOPED CONFIGURATION SET MAXDOP = 0;
-        ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET MAXDOP = PRIMARY;
-        ALTER DATABASE SCOPED CONFIGURATION SET LEGACY_CARDINALITY_ESTIMATION = OFF;
-        ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET LEGACY_CARDINALITY_ESTIMATION = PRIMARY;
-        ALTER DATABASE SCOPED CONFIGURATION SET PARAMETER_SNIFFING = ON;
-        ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET PARAMETER_SNIFFING = PRIMARY;
-        ALTER DATABASE SCOPED CONFIGURATION SET QUERY_OPTIMIZER_HOTFIXES = OFF;
-        ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET QUERY_OPTIMIZER_HOTFIXES = PRIMARY;
-    END
-
-
-GO
-IF EXISTS (SELECT 1
-           FROM   [master].[dbo].[sysdatabases]
-           WHERE  [name] = N'$(DatabaseName)')
-    BEGIN
-        ALTER DATABASE [$(DatabaseName)]
-            SET TEMPORAL_HISTORY_RETENTION ON 
-            WITH ROLLBACK IMMEDIATE;
-    END
-
-
-GO
 IF fulltextserviceproperty(N'IsFulltextInstalled') = 1
     EXECUTE sp_fulltext_database 'enable';
 
@@ -291,9 +242,9 @@ PRINT N'Creating [dbo].[Model]...';
 
 GO
 CREATE TABLE [dbo].[Model] (
-    [Id]       UNIQUEIDENTIFIER NOT NULL,
-    [Name]     VARCHAR (50)     NOT NULL,
-    [CreateAt] DATETIME         NOT NULL,
+    [Id]        UNIQUEIDENTIFIER NOT NULL,
+    [NameModel] VARCHAR (50)     NOT NULL,
+    [CreateAt]  DATETIME         NOT NULL,
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
@@ -382,6 +333,8 @@ END
 GO
 IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '0c0ba256-a9bd-441e-abca-9b73ef8e46c5')
 INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('0c0ba256-a9bd-441e-abca-9b73ef8e46c5')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'b2e52ae0-0454-4692-a85e-19839475b4d2')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('b2e52ae0-0454-4692-a85e-19839475b4d2')
 
 GO
 

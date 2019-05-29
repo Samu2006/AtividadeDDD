@@ -1,0 +1,23 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Address] (Table)
+       [dbo].[Buyer] (Table)
+       [dbo].[Model] (Table)
+       [dbo].[Vehicle] (Table)
+       [dbo].[VehicleSales] (Table)
+       [dbo].[FK_Buyer_Address] (Foreign Key)
+       [dbo].[FK_Vehicle_Model] (Foreign Key)
+       [dbo].[FK_VehicleSales_Vehicle] (Foreign Key)
+       [dbo].[FK_VehicleSales_Buyer] (Foreign Key)
+
+** Supporting actions

@@ -39,66 +39,26 @@ namespace PC2.Infra.Repositories.Concessionaire
                   });
             }
         }
-        //public IEnumerable<VehicleSales> List()
-        //{
-        //    using (var db = _DB.GetConnection())
-        //    {
-        //        var sql = "SELECT *                  " +
-        //                  "  FROM[VehicleSales] VS                   " +
-        //                  "INNER JOIN[Vehicle] V ON VS.[VehicleId] = V.[Id]" +
-        //                  "INNER JOIN[Buyer] B ON VS.[BuyerId] = B.[Id]    ";
-
-        //        var listVehicleSale = db.Query<VehicleSales, Vehicle, Buyer, VehicleSales>(sql, (vehicleSale, vehicle, buyer) =>
-        //            {
-        //                var list = _vehicleRepository.List();
-        //                foreach (var item in list)
-        //                {
-        //                    vehicle = new Vehicle(item.Id, item.Model, item.Version, item.Year,
-        //                        item.YearFabrication, item.Color, item.Renavan, item.CreateAt);
-        //                }
-        //                var list2 = _buyerRepository.List();
-        //                foreach (var item in list2.ToList())
-        //                {
-        //                    buyer = new Buyer(item.Id, item.Name, item.Address, item.Document, item.Email
-        //                                     , item.Birthday, item.Gender, item.Nationality, item.Phone, item.CreateAt);
-        //                }
-
-        //                vehicleSale = new VehicleSales(vehicleSale.Id, vehicle, vehicleSale.Note, vehicleSale.InputPrice, buyer,
-        //                                               vehicleSale.InputDate, vehicleSale.LicensePlate, vehicleSale.CreateAt);
-        //                return vehicleSale;
-        //            }, splitOn: "Id,Id,Id"
-
-        //        );
-
-
-        //        return listVehicleSale;
-
-        //    }
-        //}
         public IEnumerable<VehicleSales> List()
         {
             using (var db = _DB.GetConnection())
             {
-                var sql = "SELECT *                  " +
-                          "  FROM[VehicleSales] VS                   " +
-
+                var sql = "SELECT *" +
+                          "  FROM[VehicleSales] VS" +
                           "INNER JOIN[Vehicle] V ON VS.[VehicleId] = V.[Id]" +
                           "INNER JOIN[Buyer] B ON VS.[BuyerId] = B.[Id]    ";
-
                 var listVehicleSale = db.Query<VehicleSales, Vehicle, Buyer, VehicleSales>(sql, map: (sale, vehicle, buyer) =>
                 {
-                    vehicle = _vehicleRepository.GetById(vehicle.Id);
-                    buyer = _buyerRepository.GetById(buyer.Id);
-                    sale = new VehicleSales(sale.Id, vehicle, sale.Note, sale.InputPrice,
-                        buyer, sale.InputDate, sale.LicensePlate, sale.CreateAt);
-
+                    vehicle = _vehicleRepository.GetById(sale.VehicleId);
+                    sale.AddVehicle(vehicle);
+                    buyer = _buyerRepository.GetById(sale.BuyerId);
+                    sale.AddBuyer(buyer);
                     return sale;
                 },
-                       splitOn: "Id,Id,Id");
+                       splitOn: "Id");
                 return listVehicleSale;
             }
         }
-
 
         public void Save(VehicleSales vehicleSales)
         {
